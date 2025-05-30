@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 if [ $# -ne 2 ]; then
-    echo "Not enough arguments."
+    echo "Please send two arguments"
     exit
 fi
 

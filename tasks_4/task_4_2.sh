@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-if [ -e "$1" ]; then
+if [ $# -ne 1 ]; then
     echo "Not enough arguments."
     exit
 fi

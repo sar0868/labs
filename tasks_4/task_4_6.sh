@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
-if [ -e "$1" ]; then
-    echo "Not enough arguments."
+if [ $# -ne 1 ]; then
+    echo "Please send one argument"
     exit
 fi
 

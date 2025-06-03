@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-number=11
+number=1
 
 while [ $number -le 10 ]; do
     echo $((number * 3))

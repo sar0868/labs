@@ -1,5 +1,9 @@
 #!/usr/bin/bash
 
-for i in $(ls /var/); do
-    echo "$i"
+dir=/var/\*
+
+for i in $dir; do
+    if [ $i == /var/var ]; then
+        ls $i
+    fi
 done

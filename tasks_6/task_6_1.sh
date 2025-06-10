@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 is_positiv() {
-    if [ $1 -ge 0 ]; then
+    if [ $1 -gt 0 ]; then
         echo "$1 положительное число"
     else
         echo "$1 отрицательное число"
@@ -9,4 +9,9 @@ is_positiv() {
 }
 
 read -p "Введите число для проверки: " number
-is_positiv $number
+if [[ $number =~ ^[-]?[0-9]+$ ]]; then
+    is_positiv $number
+else
+    echo "Введено не целое число"
+    exit 1
+fi

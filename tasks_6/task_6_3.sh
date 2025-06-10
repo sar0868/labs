@@ -3,10 +3,10 @@
 is_simple() {
     number=$1
 
-    if [[ $number -ge 1 && $number -le 3 ]]; then
+    if [[ $number -eq 2 || $number -eq 3 ]]; then
         echo "$1 - простое число"
-    elif [ $number -le 0 ]; then
-        echo "$1 - равно 0 или отрицательное"
+    elif [ $number -le 1 ]; then
+        echo "$1 - не простое число"
         return
     fi
     cnt=0
@@ -23,6 +23,9 @@ is_simple() {
 if [ $# -ne 1 ]; then
     echo "one argument is required - a number"
     exit 1
+elif [[ $1 =~ ^[-]?[0-9]+$ ]]; then
+    is_simple $1
+else
+    echo "Введено не целое число"
+    exit 1
 fi
-
-is_simple $1

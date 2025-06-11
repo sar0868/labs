@@ -3,6 +3,8 @@
 is_positiv() {
     if [ $1 -gt 0 ]; then
         echo "$1 положительное число"
+    elif [ $1 -eq 0 ]; then
+        echo "Введен ноль"
     else
         echo "$1 отрицательное число"
     fi

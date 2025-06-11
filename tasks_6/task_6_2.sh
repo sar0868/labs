@@ -2,7 +2,7 @@
 
 multy() {
     number=$1
-    for item in $(seq 1 9); do
+    for item in $(seq 1 10); do
         echo "$item * $number = $((item * $number))"
     done
 }

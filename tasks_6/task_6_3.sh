@@ -3,9 +3,10 @@
 is_simple() {
     number=$1
 
-    if [[ $number -eq 2 || $number -eq 3 ]]; then
+    if [[ $number -ge 1 && $number -le 3 ]]; then
         echo "$1 - простое число"
-    elif [ $number -le 1 ]; then
+        return
+    elif [ $number -lt 1 ]; then
         echo "$1 - не простое число"
         return
     fi

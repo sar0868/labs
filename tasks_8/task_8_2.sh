@@ -11,7 +11,7 @@ declare -a week=(
 )
 
 while read -p "Input number week day (week start 1): " number; do
-    if [[ number -ge 1 && number -le ${#week[@]} ]]; then
+    if [[ $number -ge 1 && $number -le ${#week[@]} ]]; then
         echo "${week[$((number - 1))]}"
         break
     else

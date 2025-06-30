@@ -11,6 +11,6 @@ declare -a week=(
 )
 
 temp=${week[2]}
-week[2]=${week[3]}
-week[3]=$temp
+week[2]=${week[4]}
+week[4]=$temp
 echo "${week[@]}"

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-number=1
+number=11
 
-while [ $number -le 10 ]; do
+while [ $number -gt 1 ]; do
     echo $((number * 3))
-    number=$((++number))
+    number=$((--number))
 done

@@ -2,10 +2,13 @@
 
 read -p "input user name: " user
 
-hosts_file="hosts"
-awk '{$hosts[$2] = $1}' $hosts_file
-echo ${hosts[@]}
+hosts_file="servers.txt"
+hosts="/etc/hosts"
 
-# for host in $(cat $hosts_file); do
-#     echo "ssh ${user}@${hosts[host]}"
-# done
+while read -r line; do
+    host=$(grep $line $hosts | awk '{print $1}')
+    if [[ $host = "" ]]; then
+        continue
+    fi
+    ssh ${user}@${host}
+done <"$hosts_file"
